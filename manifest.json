@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "AI Prompt Traffic Warden",
+  "version": "1.0",
+  "description": "Helps users think before they paste sensitive data into AI.",
+  "permissions": [ "activeTab" ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*"
+      ],
+      "js": [ "content.js" ],
+      "css": [ "styles.css" ],
+      "run_at": "document_idle"
+    }
+  ]
+}
